@@ -64,10 +64,14 @@ router.get('/logout', function(req, res, next) {
 
 /* 회원가입 페이지 접속 */
 router.get('/join', function(req, res, next) {
-
   res.render('join');
-
   console.log('---------------회원가입 페이지 접속---------------');
+});
+
+/* 게시판 접속 */
+router.get('/board', function(req, res, next) {
+  res.render('board');
+  console.log('---------------말모이 게시판 접속---------------');
 });
 
 
