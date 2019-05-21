@@ -8,14 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
 <style>
-    body {
-        background-color: #f1f1f1;
-        font-family: 'Nanum Barun Gothic';
-        text-align: center;
-        max-width: 500px;
-        margin: auto;
-    }
-
     h1 {
         font-weight: lighter;
         font-family: 'East Sea Dokdo', cursive;
@@ -23,10 +15,12 @@
         margin: 40px;
     }
 
-    a {
-        text-decoration: none;
-        color: black;
-        font-size: 14px;
+    body {
+        background-color: #f1f1f1;
+        font-family: 'Nanum Barun Gothic';
+        text-align: center;
+        max-width: 400px;
+        margin: auto;
     }
 
     .button {
@@ -47,18 +41,15 @@
 
 <body>
 
-<form>
+<form method="post" action="/logout">
 
-<h1>로그인이 정상적으로<br>처리되었습니다.</h1>
+<h1>로그아웃이 정상적으로<br>처리되었습니다.</h1>
 <hr>
-
-<p>아이디 : <%= user_id %></p>
-<p>패스워드 : <%= user_pw %></p>
 
 </form>
 
 <br/>
-<a href="/logout"><input type="submit" class="button" value="로그아웃" style="margin-right:20px;"/></a>
+<a href="/login"><input type="submit" class="button" value="로그인" style="margin-right:20px;"/></a>
 <input type="button" onClick="location.href='http://localhost:3000/Join'" class="button" value="게시판으로"/>
 
 </body>

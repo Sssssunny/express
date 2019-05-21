@@ -2,32 +2,53 @@
 <html>
 <head>
     <title><%= title %></title>
-<link rel="stylesheet" href="http://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
 <style>
-    body {
-    background-color:#f1f1f1;
-    color:dimgray
+    * {
+        box-sizing:border-box;
     }
+
+    body {
+        background-color: #f1f1f1;
+        font-family: 'Nanum Barun Gothic';
+        font-size: 80px;
+        max-width: 500px;
+        margin: auto;
+    }
+
 
     form {
         font-size: 13px;
         font-family:'Nanum Barun Gothic';
     }
 
-    ::-moz-selection{
-          background:lightgray;
-          color:white;
-    }
-    ::selection{
-          background:lightgray;
-          color:white;
+    h1 {
+        font-weight: lighter;
+        font-family: 'East Sea Dokdo', cursive;
+        font-size: 80px;
+        margin: none;
+        text-align: center;
     }
 
-    .title {
-        font-size: 40px;
-        color: #666;
-        text-align: center;
+    .input {
+        height: 35px;
+        width: 250px;
+    }
+
+    .button {
+        background-color:#f1f1f1;
+        border:solid #f1f1f1;
+    }
+
+    ::-moz-selection {
+          background: #666;
+          color: white;
+    }
+    ::selection {
+          background: #666;
+          color: white;
     }
 </style>
 
@@ -35,20 +56,22 @@
 
 <body>
 
-<h1 class="title"><%= title %></h1>
+
+<h1><%= title %></h1>
+<hr>
+
 <form name="join" onsubmit="return validate();" method="post" action="/login">
    <table align="center" cellspacing="0">
     <tr>
-        <th colspan="2"><input type="text" name="id" id="id" style="border:solid #888 1.5px; height:35px; width:250px; margin:10px;"></th>
+        <th colspan="2"><input type="text" name="id" id="id" class="input" style="margin:40px"></th>
     </tr>
-        <th colspan="2"><input type="password" name="pw" id="pw" style="border:solid #888 1.5px; height:35px; width:250px; margin-bottom:10px;"></th>
+        <th colspan="2"><input type="password" name="pw" id="pw" class="input" style="margin-bottom:40px"></th>
     </tr>
    </table>
    <center>
        <br/>
-       <input type="submit" value="로그인" style="color:#666; background-color:#f1f1f1; border:solid #f1f1f1"/>
-       <font color="#666"> | </font>
-       <input type="button" onClick="location.href='http://localhost:3000/Join'" value="회원가입" style="color:#666; background-color:#f1f1f1; border:solid #f1f1f1"/>
+       <input type="submit" class="button" value="로그인" style="margin-right:20px;"/>
+       <input type="button" onClick="location.href='http://localhost:3000/join'" class="button" value="회원가입"/>
        <!-- <input type="button" onClick="location.href='http://localhost:3000/main'" value="버튼"> -->
    </center>
 </form>

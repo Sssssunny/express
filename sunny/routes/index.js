@@ -14,18 +14,14 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Suuny' });
 });
 
-/**
- * 로그인 페이지 접근
- */
+/* 로그인 페이지 접속 */
 router.get('/login', function(req, res, next) {
 
-  // console.log('------------session------------');
+  // console.log('---------------session---------------');
   // console.log(req.session);
-  // console.log('-------------------------------');
+  // console.log('-------------------------------------');
 
-  console.log('------------session------------');
-  console.log('로그인 페이지 접근');
-  console.log('-------------------------------');
+  console.log('---------------로그인 페이지 접속---------------');
 
   if (req.session.user_id && req.session.user_pw) {
       
@@ -39,9 +35,7 @@ router.get('/login', function(req, res, next) {
   }
 });
 
-/**
- * 로그인 처리
- */
+/* 로그인 처리 */
 router.post('/login', urlencodedParser, function (req, res, next) {
 
   const params = {
@@ -52,12 +46,29 @@ router.post('/login', urlencodedParser, function (req, res, next) {
   req.session.user_id = params.user_id;
   req.session.user_pw = params.user_pw;
 
-  console.log('------------requ.session------------');
+  console.log('---------------로그인---------------');
   console.log(req.session);
   console.log('------------------------------------');
 
   res.render('confirm', params)
-  
 });
+
+/* 로그아웃 처리 */
+router.get('/logout', function(req, res, next) {
+
+  res.render('logout');
+  req.session.destroy();
+
+  console.log('---------------로그아웃---------------');
+});
+
+/* 회원가입 페이지 접속 */
+router.get('/join', function(req, res, next) {
+
+  res.render('join');
+
+  console.log('---------------회원가입 페이지 접속---------------');
+});
+
 
 module.exports = router;
