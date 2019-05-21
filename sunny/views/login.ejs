@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<style>
+    body {
+    background-color:#f1f1f1;
+    color:dimgray
+    }
+
+    form {
+        font-size: 13px;
+        font-family:'Nanum Barun Gothic';
+    }
+
+    ::-moz-selection{
+          background:lightgray;
+          color:white;
+    }
+    ::selection{
+          background:lightgray;
+          color:white;
+    }
+
+    .title {
+        font-size: 40px;
+        color: #666;
+        text-align: center;
+    }
+</style>
+
+</head>
+
+<body>
+
+<h1 class="title"><%= title %></h1>
+<form name="join" onsubmit="return validate();" method="post" action="/login">
+   <table align="center" cellspacing="0">
+    <tr>
+        <th colspan="2"><input type="text" name="id" id="id" style="border:solid #888 1.5px; height:35px; width:250px; margin:10px;"></th>
+    </tr>
+        <th colspan="2"><input type="password" name="pw" id="pw" style="border:solid #888 1.5px; height:35px; width:250px; margin-bottom:10px;"></th>
+    </tr>
+   </table>
+   <center>
+       <br/>
+       <input type="submit" value="로그인" style="color:#666; background-color:#f1f1f1; border:solid #f1f1f1"/>
+       <font color="#666"> | </font>
+       <input type="button" onClick="location.href='http://localhost:3000/Join'" value="회원가입" style="color:#666; background-color:#f1f1f1; border:solid #f1f1f1"/>
+       <!-- <input type="button" onClick="location.href='http://localhost:3000/main'" value="버튼"> -->
+   </center>
+</form>
+
+</body>
+</html>
